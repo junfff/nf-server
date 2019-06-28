@@ -41,11 +41,7 @@
 
 # CMake
 #[cC][mM]ake[lL]ists.txt
-/.idea/*
-/.vscode/*
-/_Out/Debug/*
-/_Out/Release/*
-/Dependencies/protobuf/*
+
 /_Out/Comm/*
 /Dependencies/gperftools-2.5
 /Dependencies/lib
