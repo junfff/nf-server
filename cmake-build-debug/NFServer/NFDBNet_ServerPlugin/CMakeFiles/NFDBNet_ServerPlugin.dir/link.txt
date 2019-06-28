@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFDBNet_ServerPlugin_d.a  CMakeFiles/NFDBNet_ServerPlugin.dir/NFDBNet_ServerModule.cpp.o CMakeFiles/NFDBNet_ServerPlugin.dir/NFDBNet_ServerPlugin.cpp.o CMakeFiles/NFDBNet_ServerPlugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFDBNet_ServerPlugin_d.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFProxyLogicPlugin_d.a  CMakeFiles/NFProxyLogicPlugin.dir/NFProxyLogicModule.cpp.o CMakeFiles/NFProxyLogicPlugin.dir/NFProxyLogicPlugin.cpp.o CMakeFiles/NFProxyLogicPlugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFProxyLogicPlugin_d.a

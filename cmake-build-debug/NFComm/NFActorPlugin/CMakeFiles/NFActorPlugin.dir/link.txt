@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFActorPlugin_d.a  CMakeFiles/NFActorPlugin.dir/NFActor.cpp.o CMakeFiles/NFActorPlugin.dir/NFActorModule.cpp.o CMakeFiles/NFActorPlugin.dir/NFActorPlugin.cpp.o CMakeFiles/NFActorPlugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFActorPlugin_d.a

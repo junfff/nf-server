@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFNavigationPlugin_d.a  CMakeFiles/NFNavigationPlugin.dir/NFNavigationModule.cpp.o CMakeFiles/NFNavigationPlugin.dir/NFNavigationPlugin.cpp.o CMakeFiles/NFNavigationPlugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFNavigationPlugin_d.a

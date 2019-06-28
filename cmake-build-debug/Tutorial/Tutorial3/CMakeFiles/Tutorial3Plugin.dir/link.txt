@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/Tutorial3Plugin_d.a  CMakeFiles/Tutorial3Plugin.dir/HelloWorld3Module.cpp.o CMakeFiles/Tutorial3Plugin.dir/Tutorial3Plugin.cpp.o CMakeFiles/Tutorial3Plugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/Tutorial3Plugin_d.a

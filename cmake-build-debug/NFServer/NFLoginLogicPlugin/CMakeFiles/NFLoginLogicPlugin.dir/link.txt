@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFLoginLogicPlugin_d.a  CMakeFiles/NFLoginLogicPlugin.dir/NFLoginLogicModule.cpp.o CMakeFiles/NFLoginLogicPlugin.dir/NFLoginLogicPlugin.cpp.o CMakeFiles/NFLoginLogicPlugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFLoginLogicPlugin_d.a

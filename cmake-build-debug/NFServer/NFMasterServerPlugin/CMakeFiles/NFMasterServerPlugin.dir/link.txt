@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFMasterServerPlugin_d.a  CMakeFiles/NFMasterServerPlugin.dir/NFMasterModule.cpp.o CMakeFiles/NFMasterServerPlugin.dir/NFMasterServerPlugin.cpp.o CMakeFiles/NFMasterServerPlugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFMasterServerPlugin_d.a

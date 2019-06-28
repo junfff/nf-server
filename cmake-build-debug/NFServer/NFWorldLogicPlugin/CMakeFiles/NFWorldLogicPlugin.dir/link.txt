@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFWorldLogicPlugin_d.a  CMakeFiles/NFWorldLogicPlugin.dir/NFWorldLogicModule.cpp.o CMakeFiles/NFWorldLogicPlugin.dir/NFWorldLogicPlugin.cpp.o CMakeFiles/NFWorldLogicPlugin.dir/NFWorldPVPModule.cpp.o CMakeFiles/NFWorldLogicPlugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFWorldLogicPlugin_d.a

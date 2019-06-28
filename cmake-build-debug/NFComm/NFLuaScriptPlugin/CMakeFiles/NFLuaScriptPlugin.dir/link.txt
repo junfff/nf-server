@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFLuaScriptPlugin_d.a  CMakeFiles/NFLuaScriptPlugin.dir/NFLuaHttpModule.cpp.o CMakeFiles/NFLuaScriptPlugin.dir/NFLuaPBModule.cpp.o CMakeFiles/NFLuaScriptPlugin.dir/NFLuaScriptModule.cpp.o CMakeFiles/NFLuaScriptPlugin.dir/NFLuaScriptPlugin.cpp.o CMakeFiles/NFLuaScriptPlugin.dir/NFLuaWebSocketModule.cpp.o CMakeFiles/NFLuaScriptPlugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFLuaScriptPlugin_d.a

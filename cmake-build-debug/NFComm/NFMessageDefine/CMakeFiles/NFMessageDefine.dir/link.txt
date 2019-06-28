@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFMessageDefine_d.a  CMakeFiles/NFMessageDefine.dir/NFMsgDefine.cpp.o CMakeFiles/NFMessageDefine.dir/NFDefine.pb.cc.o CMakeFiles/NFMessageDefine.dir/NFMsgBase.pb.cc.o CMakeFiles/NFMessageDefine.dir/NFMsgExtra.pb.cc.o CMakeFiles/NFMessageDefine.dir/NFMsgPreGame.pb.cc.o CMakeFiles/NFMessageDefine.dir/NFMsgShare.pb.cc.o
+/usr/bin/ranlib ../../../_Out/Debug/NFMessageDefine_d.a

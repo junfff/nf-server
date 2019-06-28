@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFConfigPlugin_d.a  CMakeFiles/NFConfigPlugin.dir/NFClassModule.cpp.o CMakeFiles/NFConfigPlugin.dir/NFCommonConfigModule.cpp.o CMakeFiles/NFConfigPlugin.dir/NFConfigPlugin.cpp.o CMakeFiles/NFConfigPlugin.dir/NFElementModule.cpp.o CMakeFiles/NFConfigPlugin.dir/dllmain.cpp.o CMakeFiles/NFConfigPlugin.dir/myrc4.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFConfigPlugin_d.a

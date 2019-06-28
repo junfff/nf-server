@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFWorldNet_ServerPlugin_d.a  CMakeFiles/NFWorldNet_ServerPlugin.dir/NFWorldNet_ServerModule.cpp.o CMakeFiles/NFWorldNet_ServerPlugin.dir/NFWorldNet_ServerPlugin.cpp.o CMakeFiles/NFWorldNet_ServerPlugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFWorldNet_ServerPlugin_d.a

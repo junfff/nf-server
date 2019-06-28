@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFChatPlugin_d.a  CMakeFiles/NFChatPlugin.dir/NFChatModule.cpp.o CMakeFiles/NFChatPlugin.dir/NFChatPlugin.cpp.o CMakeFiles/NFChatPlugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFChatPlugin_d.a

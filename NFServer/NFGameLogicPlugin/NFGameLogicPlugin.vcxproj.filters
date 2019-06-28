@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="NFBuffModule">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="NFCreateRoleModule">
+      <UniqueIdentifier>{ca2648e6-36dd-4163-9791-b22482d4b8b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NFPVP">
+      <UniqueIdentifier>{19e315a2-7662-47a2-a943-6abcee1ee64c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NFSyncModule">
+      <UniqueIdentifier>{ad5d009c-1b04-4908-bad2-4fbb3fb70803}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="NFGameLogicPlugin.h" />
+    <ClInclude Include="NFBuffModule.h">
+      <Filter>NFBuffModule</Filter>
+    </ClInclude>
+    <ClInclude Include="NFCreateRoleModule.h">
+      <Filter>NFCreateRoleModule</Filter>
+    </ClInclude>
+    <ClInclude Include="NFGamePVPModule.h">
+      <Filter>NFPVP</Filter>
+    </ClInclude>
+    <ClInclude Include="NFSyncModule.h">
+      <Filter>NFSyncModule</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="NFGameLogicPlugin.cpp" />
+    <ClCompile Include="NFBuffModule.cpp">
+      <Filter>NFBuffModule</Filter>
+    </ClCompile>
+    <ClCompile Include="NFCreateRoleModule.cpp">
+      <Filter>NFCreateRoleModule</Filter>
+    </ClCompile>
+    <ClCompile Include="NFGamePVPModule.cpp">
+      <Filter>NFPVP</Filter>
+    </ClCompile>
+    <ClCompile Include="NFSyncModule.cpp">
+      <Filter>NFSyncModule</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

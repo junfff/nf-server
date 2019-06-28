@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFLoginNet_HttpServerPlugin_d.a  CMakeFiles/NFLoginNet_HttpServerPlugin.dir/NFLoginNet_HttpServerModule.cpp.o CMakeFiles/NFLoginNet_HttpServerPlugin.dir/NFLoginNet_HttpServerPlugin.cpp.o CMakeFiles/NFLoginNet_HttpServerPlugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFLoginNet_HttpServerPlugin_d.a

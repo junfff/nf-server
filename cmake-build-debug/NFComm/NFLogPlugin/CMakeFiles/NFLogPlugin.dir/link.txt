@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFLogPlugin_d.a  CMakeFiles/NFLogPlugin.dir/NFLogModule.cpp.o CMakeFiles/NFLogPlugin.dir/NFLogPlugin.cpp.o CMakeFiles/NFLogPlugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFLogPlugin_d.a

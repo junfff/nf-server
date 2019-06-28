@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFGameLogicPlugin_d.a  CMakeFiles/NFGameLogicPlugin.dir/NFBuffModule.cpp.o CMakeFiles/NFGameLogicPlugin.dir/NFCreateRoleModule.cpp.o CMakeFiles/NFGameLogicPlugin.dir/NFGameLogicPlugin.cpp.o CMakeFiles/NFGameLogicPlugin.dir/NFGamePVPModule.cpp.o CMakeFiles/NFGameLogicPlugin.dir/NFSyncModule.cpp.o CMakeFiles/NFGameLogicPlugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFGameLogicPlugin_d.a

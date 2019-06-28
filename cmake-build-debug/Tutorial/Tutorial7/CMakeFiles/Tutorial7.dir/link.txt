@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/Tutorial7_d.a  CMakeFiles/Tutorial7.dir/HelloWorld.cpp.o CMakeFiles/Tutorial7.dir/Tutorial7.cpp.o CMakeFiles/Tutorial7.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/Tutorial7_d.a

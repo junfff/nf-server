@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFProxyServerNet_ServerPlugin_d.a  CMakeFiles/NFProxyServerNet_ServerPlugin.dir/NFProxyServerNet_ServerModule.cpp.o CMakeFiles/NFProxyServerNet_ServerPlugin.dir/NFProxyServerNet_ServerPlugin.cpp.o CMakeFiles/NFProxyServerNet_ServerPlugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFProxyServerNet_ServerPlugin_d.a

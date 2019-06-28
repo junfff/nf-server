@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFGuildPlugin_d.a  CMakeFiles/NFGuildPlugin.dir/NFClanModule.cpp.o CMakeFiles/NFGuildPlugin.dir/NFClanPlugin.cpp.o CMakeFiles/NFGuildPlugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFGuildPlugin_d.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFGameServerNet_ClientPlugin_d.a  CMakeFiles/NFGameServerNet_ClientPlugin.dir/NFGameServerNet_ClientPlugin.cpp.o CMakeFiles/NFGameServerNet_ClientPlugin.dir/NFGameServerToDBModule.cpp.o CMakeFiles/NFGameServerNet_ClientPlugin.dir/NFGameServerToWorldModule.cpp.o CMakeFiles/NFGameServerNet_ClientPlugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFGameServerNet_ClientPlugin_d.a

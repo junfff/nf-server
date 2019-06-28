@@ -1,0 +1,169 @@
+基础框架消息走向图
+
+一、 LoginServer 登陆服务器
+插件:NFLoginNet_ClientPlugin NFLoginNet_ServerPlugin
+登陆服务器启动:
+1. 创建网络并监听客户端连接
+2. 创建网络并连接到MasterServer
+3. 连接上MasterServer之后发送LoginServer信息到MasterServer(注册LoginServer到MasterServer)  ServerInfoReport EGMI_LTM_LOGIN_REGISTERED 
+
+// 消息处理
+<<Client EGMI_REQ_LOGIN ReqAccountLogin 登陆请求 这边主要是第三方验证登陆（基础框架直接不验证返回登陆成功）
+>>Client EGMI_ACK_LOGIN AckEventResult  登陆返回 
+
+<<Client EGMI_REQ_WORLD_LIST  ReqServerList 请求WorldServer列表 
+>>Client EGMI_ACK_WORLD_LIST  AckServerList 返回世界服务器列表 
+
+<<Client EGMI_REQ_CONNECT_WORLD ReqConnectWorld 选择WorldServer请求
+>>Master EGMI_REQ_CONNECT_WORLD ReqConnectWorld 向MasterServer请求选择WorldServer请求
+
+<<Master EGMI_ACK_CONNECT_WORLD EGMI_ACK_CONNECT_WORLD 接收到MasterServer连接WorldServer的返回
+>>Client EGMI_ACK_CONNECT_WORLD AckConnectWorldResult 返回World信息给客户端
+
+<<Master EGMI_STS_NET_INFO ServerInfoReportList 接收到MasterServer返回的WorldServer列表
+
+二、 ProxyServer 代理服务器
+插件:NFProxyServerNet_ClientPlugin NFProxyServerNet_ServerPlugin
+代理服务器启动:
+1. 创建网络并监听客户端连接
+2. 创建网络并连接到WorldServer
+3. 连接上WorldServer之后发送ProxyServer信息到WorldServer(注册ProxyServer到WorldServer)  ServerInfoReportList EGMI_PTWG_PROXY_REGISTERED 
+4. 创建网络并连接到GameServer
+5. 连接上GameServer之后发送ProxyServer信息到GameServer(注册ProxyServer到GameServer)  ServerInfoReportList EGMI_PTWG_PROXY_REGISTERED 
+
+// 消息处理
+<<Client EGMI_REQ_CONNECT_KEY ReqAccountLogin 请求登陆到代理服务器（校验密钥是否一致。否则不允许登陆）
+>>Client EGMI_ACK_CONNECT_KEY AckEventResult  返回登陆成功的消息
+
+<<Client EGMI_REQ_WORLD_LIST  ReqServerList 请求GameServer列表 
+>>Client EGMI_ACK_WORLD_LIST  AckServerList 返回GameServer列表 
+
+<<Client EGMI_REQ_SELECT_SERVER ReqSelectServer 选择GameServer请求 (ProxyServer会将Client和GameServer绑定好方便后面转发消息)
+>>Client EGMI_ACK_SELECT_SERVER AckEventResult 返回选择服务器是否成功
+
+<<Client EGMI_REQ_ROLE_LIST ReqRoleList 请求角色列表
+>>GameServer EGMI_REQ_ROLE_LIST 转发到Client所在的GameServer
+<<GameServer EGMI_ACK_ROLE_LIST AckRoleLiteInfoList 接受到GameServer角色列表
+>>Client EGMI_ACK_ROLE_LIST 转发给客户端
+
+<<Client EGMI_REQ_CREATE_ROLE ReqCreateRole 请求创建角色
+>>GameServer EGMI_REQ_CREATE_ROLE 转发到Client所在的GameServer
+<<GameServer EGMI_ACK_ROLE_LIST AckRoleLiteInfoList 接受到GameServer角色列表
+>>Client EGMI_ACK_ROLE_LIST 转发给客户端
+
+<<Client EGMI_REQ_DELETE_ROLE ReqDeleteRole 请求删除角色
+>>GameServer EGMI_REQ_DELETE_ROLE 转发到Client所在的GameServer
+<<GameServer EGMI_ACK_ROLE_LIST AckRoleLiteInfoList 接受到GameServer角色列表
+>>Client EGMI_ACK_ROLE_LIST 转发给客户端
+
+<<Client EGMI_REQ_ENTER_GAME ReqEnterGameServer 请求进入游戏
+>>GameServer EGMI_REQ_ENTER_GAME 转发到Client所在的GameServer
+<<GameServer EGMI_ACK_ENTER_GAME AckEventResult 收到服务器的进入游戏回复（ProxyServer绑定Client的GUID）
+>>Client EGMI_ACK_ENTER_GAME 转发给客户端
+
+<<Client Other Message 接收客户端的其它消息
+>>GameServer 直接转发到对应的GameServer
+
+// 连接GamServer的处理
+<<GameServer Other Message  接收到GameServer的其它消息
+>>Client 直接转发到对应的Client
+
+// 连接WorldServer的处理
+<<WorldServer EGMI_ACK_CONNECT_WORLD 接收到客户端从LoginServer转发到Proxy的登陆验证请求（ProxyServer保存这个一次性密钥）
+
+<<WorldServer EGMI_STS_NET_INFO 通知ProxyServer连接新的WorldServer和GameServer 方便转发
+
+<<WorldServer Other Message 接收到WorldServer的其它消息
+>>Client 直接转发到对应的Client
+
+三、 WorldServer 世界服务器
+插件:NFWorldNet_ClientPlugin NFWorldNet_ServerPlugin
+World服务器启动:
+1. 创建网络并监听客户端连接
+2. 创建网络并连接到MasterServer
+3. 连接上MasterServer之后发送WorldServer信息到MasterServer(注册WorldServer到MasterServer)  ServerInfoReportList EGMI_MTL_WORLD_REGISTERED 
+
+// 消息处理
+<<MasterServer EGMI_REQ_CONNECT_WORLD ReqConnectWorld 请求连接到WorldServer
+>>MasterServer EGMI_ACK_CONNECT_WORLD AckConnectWorldResult  返回ProxyServer的连接地址
+
+<<ProxyServer EGMI_PTWG_PROXY_REFRESH  ServerInfoReportList 刷新ProxyServer的状态
+>>ProxyServer EGMI_STS_NET_INFO ServerInfoReportList 同步当前所有的GameServer状态给ProxyServer
+
+<<ProxyServer EGMI_PTWG_PROXY_REGISTERED  ServerInfoReportList 注册ProxyServer到WorldServer
+>>ProxyServer EGMI_STS_NET_INFO ServerInfoReportList 同步当前所有的GameServer状态给ProxyServer
+
+<<ProxyServer EGMI_PTWG_PROXY_UNREGISTERED  ServerInfoReportList 移除ProxyServer
+
+<<GameServer EGMI_GTW_GAME_REFRESH  ServerInfoReportList 刷新ProxyServer的状态
+>>ProxyServer EGMI_STS_NET_INFO ServerInfoReportList 同步当前所有的GameServer状态给ProxyServer
+
+<<GameServer EGMI_GTW_GAME_REGISTERED  ServerInfoReportList 注册ProxyServer到WorldServer
+>>ProxyServer EGMI_STS_NET_INFO ServerInfoReportList 同步当前所有的GameServer状态给ProxyServer
+
+<<GameServer EGMI_GTW_GAME_UNREGISTERED  ServerInfoReportList 移除GameServer
+
+<<GameServer EGMI_ACK_ONLINE_NOTIFY 暂时没处理
+<<GameServer EGMI_ACK_OFFLINE_NOTIFY 暂时没处理
+<<GameServer EGMI_STS_SERVER_REPORT 报告GameServer状态
+>>MasterServer EGMI_STS_SERVER_REPORT 转发服务器状态给MasterServer
+
+
+四、 MasterServer 中心服务器
+插件:NFMasterNet_ServerPlugin
+Master服务器启动:
+1. 创建网络并监听客户端连接(客户端指的是LoginServer WorldServer)
+
+// 消息处理
+<<WorldServer EGMI_MTL_WORLD_REGISTERED ServerInfoReportList 注册WorldServer到MasterServer
+>>LoginServer EGMI_STS_NET_INFO ServerInfoReportList 同步WorldServer状态到LoginServer上
+
+<<WorldServer EGMI_MTL_WORLD_UNREGISTERED ServerInfoReportList 移除WorldServer 
+>>LoginServer EGMI_STS_NET_INFO ServerInfoReportList 同步WorldServer状态到LoginServer上
+
+<<WorldServer EGMI_MTL_WORLD_REFRESH ServerInfoReportList 刷新WorldServer状态
+>>LoginServer EGMI_STS_NET_INFO ServerInfoReportList 同步WorldServer状态到LoginServer上
+
+<<LoginServerr EGMI_LTM_LOGIN_REGISTERED ServerInfoReportList 注册LoginServer到MasterServer
+>>WorldServer EGMI_STS_NET_INFO ServerInfoReportList 同步注册LoginServer状态到WorldServer上
+
+<<LoginServer EGMI_LTM_LOGIN_UNREGISTERED ServerInfoReportList 移除LoginServer
+>>WorldServer EGMI_STS_NET_INFO ServerInfoReportList 同步注册LoginServer状态到WorldServer上
+
+<<LoginServer EGMI_LTM_LOGIN_REFRESH ServerInfoReportList 刷新LoginServer状态
+>>WorldServer EGMI_STS_NET_INFO ServerInfoReportList 同步注册LoginServer状态到WorldServer上
+
+<<LoginServer EGMI_REQ_CONNECT_WORLD 请求连接到World
+>>WorldServer EGMI_REQ_CONNECT_WORLD 转发到World
+
+<<WorldServer EGMI_ACK_CONNECT_WORLD WorldServer 返回WorldServer连接信息
+>>LoginServer EGMI_ACK_CONNECT_WORLD 转发WorldServer信息到Login
+
+五、 GameServer 游戏服务器
+插件:NFGameServerNet_ClientPlugin NFGameServerNet_ServerPlugin
+GameServer启动:
+1. 创建网络并监听客户端连接(客户端指的是ProxyServer)
+2. 创建网络并连接到WorldServer
+3. 连接上WorldServer之后发送GameServer信息到WorldServer(注册GameServer到WorldServer)  ServerInfoReportList EGMI_GTW_GAME_REGISTERED 
+// 消息处理
+<<WorldServer GameServer没处理的消息，直接转发到ProxyServer
+
+
+<<ProxyServer EGMI_PTWG_PROXY_REGISTERED ServerInfoReportList 注册ProxyServer到GameServer
+
+<<ProxyServer EGMI_PTWG_PROXY_UNREGISTERED ServerInfoReportList 移除ProxyServer
+
+<<ProxyServer EGMI_PTWG_PROXY_REFRESH ServerInfoReportList 刷新ProxyServer状态
+
+
+<<ProxyServer EGMI_REQ_ROLE_LIST ReqRoleList 请求角色列表
+>>ProxyServer EGMI_ACK_ROLE_LIST AckRoleLiteInfoList 发送角色列表到ProxyServer
+
+<<ProxyServer EGMI_REQ_CREATE_ROLE ReqCreateRole 请求创建角色
+<<ProxyServer EGMI_ACK_ROLE_LIST AckRoleLiteInfoList 发送角色列表到ProxyServer
+
+<<ProxyServer EGMI_REQ_DELETE_ROLE ReqDeleteRole 请求删除角色
+<<ProxyServer EGMI_ACK_ROLE_LIST AckRoleLiteInfoList 发送角色列表到ProxyServer
+
+<<ProxyServer EGMI_REQ_ENTER_GAME ReqEnterGameServer 请求进入游戏
+<<ProxyServer EGMI_ACK_ENTER_GAME AckEventResult 发送进入游戏消息到ProxyServer

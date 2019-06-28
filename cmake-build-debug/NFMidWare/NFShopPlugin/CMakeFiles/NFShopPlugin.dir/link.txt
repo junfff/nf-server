@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFShopPlugin_d.a  CMakeFiles/NFShopPlugin.dir/NFShopModule.cpp.o CMakeFiles/NFShopPlugin.dir/NFShopPlugin.cpp.o CMakeFiles/NFShopPlugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFShopPlugin_d.a

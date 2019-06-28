@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFSecurityPlugin_d.a  CMakeFiles/NFSecurityPlugin.dir/NFSecurityModule.cpp.o CMakeFiles/NFSecurityPlugin.dir/NFSecurityPlugin.cpp.o CMakeFiles/NFSecurityPlugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFSecurityPlugin_d.a

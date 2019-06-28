@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFRankPlugin_d.a  CMakeFiles/NFRankPlugin.dir/NFRankModule.cpp.o CMakeFiles/NFRankPlugin.dir/NFRankPlugin.cpp.o CMakeFiles/NFRankPlugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFRankPlugin_d.a

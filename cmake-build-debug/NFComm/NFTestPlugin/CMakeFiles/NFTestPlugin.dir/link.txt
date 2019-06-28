@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFTestPlugin_d.a  CMakeFiles/NFTestPlugin.dir/NFTestModule.cpp.o CMakeFiles/NFTestPlugin.dir/NFTestPlugin.cpp.o CMakeFiles/NFTestPlugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFTestPlugin_d.a

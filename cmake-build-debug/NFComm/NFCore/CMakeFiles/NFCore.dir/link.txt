@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFCore_d.a  CMakeFiles/NFCore.dir/NFObject.cpp.o CMakeFiles/NFCore.dir/NFProperty.cpp.o CMakeFiles/NFCore.dir/NFPropertyManager.cpp.o CMakeFiles/NFCore.dir/NFRecord.cpp.o CMakeFiles/NFCore.dir/NFRecordManager.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFCore_d.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFHeroPlugin_d.a  CMakeFiles/NFHeroPlugin.dir/NFHeroModule.cpp.o CMakeFiles/NFHeroPlugin.dir/NFHeroPlugin.cpp.o CMakeFiles/NFHeroPlugin.dir/NFHeroPropertyModule.cpp.o CMakeFiles/NFHeroPlugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFHeroPlugin_d.a

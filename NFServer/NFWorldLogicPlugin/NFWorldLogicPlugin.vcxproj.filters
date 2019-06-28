@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="NFWorldLogicPlugin.h" />
+    <ClInclude Include="NFWorldLogicModule.h" />
+    <ClInclude Include="NFWorldPVPModule.h">
+      <Filter>NFPVP</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="NFWorldLogicPlugin.cpp" />
+    <ClCompile Include="NFWorldLogicModule.cpp" />
+    <ClCompile Include="NFWorldPVPModule.cpp">
+      <Filter>NFPVP</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="NFPVP">
+      <UniqueIdentifier>{96618156-8584-4f96-861d-5cdcf74b7ee2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

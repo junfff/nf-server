@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFMailPlugin_d.a  CMakeFiles/NFMailPlugin.dir/NFMailModule.cpp.o CMakeFiles/NFMailPlugin.dir/NFMailPlugin.cpp.o CMakeFiles/NFMailPlugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFMailPlugin_d.a

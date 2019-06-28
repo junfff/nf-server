@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFFriendPlugin_d.a  CMakeFiles/NFFriendPlugin.dir/NFFriendModule.cpp.o CMakeFiles/NFFriendPlugin.dir/NFFriendPlugin.cpp.o CMakeFiles/NFFriendPlugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFFriendPlugin_d.a

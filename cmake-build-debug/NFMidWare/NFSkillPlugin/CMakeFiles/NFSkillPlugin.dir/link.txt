@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFSkillPlugin_d.a  CMakeFiles/NFSkillPlugin.dir/NFBriefSkillConsumeProcessModule.cpp.o CMakeFiles/NFSkillPlugin.dir/NFBulletSkillConsumeProcessModule.cpp.o CMakeFiles/NFSkillPlugin.dir/NFSkillConsumeManagerModule.cpp.o CMakeFiles/NFSkillPlugin.dir/NFSkillCooldownModule.cpp.o CMakeFiles/NFSkillPlugin.dir/NFSkillModule.cpp.o CMakeFiles/NFSkillPlugin.dir/NFSkillPlugin.cpp.o CMakeFiles/NFSkillPlugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFSkillPlugin_d.a

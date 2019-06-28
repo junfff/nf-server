@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFTaskPlugin_d.a  CMakeFiles/NFTaskPlugin.dir/NFTaskModule.cpp.o CMakeFiles/NFTaskPlugin.dir/NFTaskPlugin.cpp.o CMakeFiles/NFTaskPlugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFTaskPlugin_d.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../_Out/Debug/NFNetPlugin_d.a  CMakeFiles/NFNetPlugin.dir/NFHttpClient.cpp.o CMakeFiles/NFNetPlugin.dir/NFHttpClientModule.cpp.o CMakeFiles/NFNetPlugin.dir/NFHttpServer.cpp.o CMakeFiles/NFNetPlugin.dir/NFHttpServerModule.cpp.o CMakeFiles/NFNetPlugin.dir/NFNet.cpp.o CMakeFiles/NFNetPlugin.dir/NFNetClientModule.cpp.o CMakeFiles/NFNetPlugin.dir/NFNetModule.cpp.o CMakeFiles/NFNetPlugin.dir/NFNetPlugin.cpp.o CMakeFiles/NFNetPlugin.dir/dllmain.cpp.o
+/usr/bin/ranlib ../../../_Out/Debug/NFNetPlugin_d.a
